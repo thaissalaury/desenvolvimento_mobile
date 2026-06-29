@@ -1,0 +1,962 @@
+[
+  {
+    "id": "gk-1",
+    "category": "General Knowledge",
+    "difficulty": "easy",
+    "question": "Qual é a cor resultante da mistura de azul e amarelo?",
+    "answers": ["Verde", "Roxo", "Laranja", "Marrom"],
+    "correctAnswer": "Verde"
+  },
+  {
+    "id": "gk-2",
+    "category": "General Knowledge",
+    "difficulty": "easy",
+    "question": "Quantos dias tem um ano bissexto?",
+    "answers": ["365", "366", "364", "368"],
+    "correctAnswer": "366"
+  },
+  {
+    "id": "gk-3",
+    "category": "General Knowledge",
+    "difficulty": "easy",
+    "question": "Quem pintou a famosa obra 'Mona Lisa'?",
+    "answers": ["Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Claude Monet"],
+    "correctAnswer": "Leonardo da Vinci"
+  },
+  {
+    "id": "gk-4",
+    "category": "General Knowledge",
+    "difficulty": "medium",
+    "question": "Qual é a moeda oficial do Japão?",
+    "answers": ["Iene", "Yuan", "Won", "Ringgit"],
+    "correctAnswer": "Iene"
+  },
+  {
+    "id": "gk-5",
+    "category": "General Knowledge",
+    "difficulty": "medium",
+    "question": "Em qual país se originou o jogo de xadrez?",
+    "answers": ["China", "Índia", "Pérsia", "Egito"],
+    "correctAnswer": "Índia"
+  },
+  {
+    "id": "gk-6",
+    "category": "General Knowledge",
+    "difficulty": "medium",
+    "question": "Qual destas bebidas contém cafeína?",
+    "answers": ["Chá de camomila", "Chá preto", "Suco de maracujá", "Água de coco"],
+    "correctAnswer": "Chá preto"
+  },
+  {
+    "id": "gk-7",
+    "category": "General Knowledge",
+    "difficulty": "hard",
+    "question": "Quantos fusos horários existem na Rússia?",
+    "answers": ["11", "9", "7", "13"],
+    "correctAnswer": "11"
+  },
+  {
+    "id": "gk-8",
+    "category": "General Knowledge",
+    "difficulty": "hard",
+    "question": "Qual país tem o maior número de ilhas no mundo?",
+    "answers": ["Suécia", "Canadá", "Indonésia", "Filipinas"],
+    "correctAnswer": "Suécia"
+  },
+  {
+    "id": "gk-9",
+    "category": "General Knowledge",
+    "difficulty": "hard",
+    "question": "Qual é o menor país independente do mundo em área?",
+    "answers": ["Mônaco", "Nauru", "San Marino", "Vaticano"],
+    "correctAnswer": "Vaticano"
+  },
+  {
+    "id": "sci-1",
+    "category": "Science",
+    "difficulty": "easy",
+    "question": "Qual é o elemento químico mais abundante no universo?",
+    "answers": ["Oxigênio", "Hidrogênio", "Hélio", "Nitrogênio"],
+    "correctAnswer": "Hidrogênio"
+  },
+  {
+    "id": "sci-2",
+    "category": "Science",
+    "difficulty": "easy",
+    "question": "Qual órgão humano é responsável por bombear o sangue?",
+    "answers": ["Pulmão", "Cérebro", "Coração", "Fígado"],
+    "correctAnswer": "Coração"
+  },
+  {
+    "id": "sci-3",
+    "category": "Science",
+    "difficulty": "easy",
+    "question": "Quantos planetas existem no nosso Sistema Solar?",
+    "answers": ["7", "8", "9", "10"],
+    "correctAnswer": "8"
+  },
+  {
+    "id": "sci-4",
+    "category": "Science",
+    "difficulty": "medium",
+    "question": "Qual é a velocidade aproximada da luz?",
+    "answers": ["300.000 km/s", "150.000 km/s", "1.000.000 km/s", "30.000 km/s"],
+    "correctAnswer": "300.000 km/s"
+  },
+  {
+    "id": "sci-5",
+    "category": "Science",
+    "difficulty": "medium",
+    "question": "Qual planeta do Sistema Solar é conhecido como o 'Planeta Vermelho'?",
+    "answers": ["Vênus", "Marte", "Júpiter", "Saturno"],
+    "correctAnswer": "Marte"
+  },
+  {
+    "id": "sci-6",
+    "category": "Science",
+    "difficulty": "medium",
+    "question": "Qual vitamina é produzida na pele humana quando exposta à luz solar?",
+    "answers": ["Vitamina A", "Vitamina B12", "Vitamina C", "Vitamina D"],
+    "correctAnswer": "Vitamina D"
+  },
+  {
+    "id": "sci-7",
+    "category": "Science",
+    "difficulty": "hard",
+    "question": "Qual é a fórmula química do ozônio?",
+    "answers": ["O2", "O3", "CO2", "H2O"],
+    "correctAnswer": "O3"
+  },
+  {
+    "id": "sci-8",
+    "category": "Science",
+    "difficulty": "hard",
+    "question": "Quem é considerado o pai da teoria quântica?",
+    "answers": ["Albert Einstein", "Max Planck", "Niels Bohr", "Werner Heisenberg"],
+    "correctAnswer": "Max Planck"
+  },
+  {
+    "id": "sci-9",
+    "category": "Science",
+    "difficulty": "hard",
+    "question": "Quantos ossos tem um ser humano adulto em média?",
+    "answers": ["206", "300", "186", "220"],
+    "correctAnswer": "206"
+  },
+  {
+    "id": "hist-1",
+    "category": "History",
+    "difficulty": "easy",
+    "question": "Quem foi o primeiro presidente dos Estados Unidos?",
+    "answers": ["Thomas Jefferson", "Abraham Lincoln", "George Washington", "John Adams"],
+    "correctAnswer": "George Washington"
+  },
+  {
+    "id": "hist-2",
+    "category": "History",
+    "difficulty": "easy",
+    "question": "Qual país colonizou o Brasil?",
+    "answers": ["Espanha", "França", "Portugal", "Inglaterra"],
+    "correctAnswer": "Portugal"
+  },
+  {
+    "id": "hist-3",
+    "category": "History",
+    "difficulty": "easy",
+    "question": "Em qual ano começou a Segunda Guerra Mundial?",
+    "answers": ["1914", "1939", "1945", "1918"],
+    "correctAnswer": "1939"
+  },
+  {
+    "id": "hist-4",
+    "category": "History",
+    "difficulty": "medium",
+    "question": "Quem proclamou a independência do Brasil?",
+    "answers": ["Dom Pedro I", "Dom Pedro II", "Tiradentes", "Deodoro da Fonseca"],
+    "correctAnswer": "Dom Pedro I"
+  },
+  {
+    "id": "hist-5",
+    "category": "History",
+    "difficulty": "medium",
+    "question": "Qual civilização antiga construiu as pirâmides de Gizé?",
+    "answers": ["Romanos", "Gregos", "Egípcios", "Maias"],
+    "correctAnswer": "Egípcios"
+  },
+  {
+    "id": "hist-6",
+    "category": "History",
+    "difficulty": "medium",
+    "question": "Quem foi a rainha que governou o Reino Unido por mais de 70 anos?",
+    "answers": ["Rainha Vitória", "Rainha Elizabeth I", "Rainha Elizabeth II", "Rainha Maria"],
+    "correctAnswer": "Rainha Elizabeth II"
+  },
+  {
+    "id": "hist-7",
+    "category": "History",
+    "difficulty": "hard",
+    "question": "Qual império foi governado por Genghis Khan?",
+    "answers": ["Império Otomano", "Império Mongol", "Império Bizantino", "Império Romano"],
+    "correctAnswer": "Império Mongol"
+  },
+  {
+    "id": "hist-8",
+    "category": "History",
+    "difficulty": "hard",
+    "question": "Em qual cidade foi assinado o tratado que pôs fim à Primeira Guerra Mundial?",
+    "answers": ["Londres", "Paris", "Versalhes", "Berlim"],
+    "correctAnswer": "Versalhes"
+  },
+  {
+    "id": "hist-9",
+    "category": "History",
+    "difficulty": "hard",
+    "question": "Quem foi o líder da Revolução Russa de 1917?",
+    "answers": ["Joseph Stalin", "Leon Trotsky", "Vladimir Lenin", "Nikita Khrushchev"],
+    "correctAnswer": "Vladimir Lenin"
+  },
+  {
+    "id": "geo-1",
+    "category": "Geography",
+    "difficulty": "easy",
+    "question": "Qual é o maior oceano do mundo?",
+    "answers": ["Atlântico", "Índico", "Glacial Ártico", "Pacífico"],
+    "correctAnswer": "Pacífico"
+  },
+  {
+    "id": "geo-2",
+    "category": "Geography",
+    "difficulty": "easy",
+    "question": "Qual é a capital da França?",
+    "answers": ["Londres", "Roma", "Paris", "Madri"],
+    "correctAnswer": "Paris"
+  },
+  {
+    "id": "geo-3",
+    "category": "Geography",
+    "difficulty": "easy",
+    "question": "Qual país sul-americano possui a maior extensão territorial?",
+    "answers": ["Argentina", "Brasil", "Colômbia", "Peru"],
+    "correctAnswer": "Brasil"
+  },
+  {
+    "id": "geo-4",
+    "category": "Geography",
+    "difficulty": "medium",
+    "question": "Qual é o rio mais longo do mundo?",
+    "answers": ["Rio Nilo", "Rio Amazonas", "Rio Mississippi", "Rio Yangtze"],
+    "correctAnswer": "Rio Amazonas"
+  },
+  {
+    "id": "geo-5",
+    "category": "Geography",
+    "difficulty": "medium",
+    "question": "Qual é a maior floresta tropical do planeta?",
+    "answers": ["Floresta do Congo", "Floresta Amazônica", "Taiga Siberiana", "Floresta Daintree"],
+    "correctAnswer": "Floresta Amazônica"
+  },
+  {
+    "id": "geo-6",
+    "category": "Geography",
+    "difficulty": "medium",
+    "question": "Qual montanha é considerada a mais alta do mundo acima do nível do mar?",
+    "answers": ["K2", "Monte Everest", "Kilimanjaro", "Monte Fuji"],
+    "correctAnswer": "Monte Everest"
+  },
+  {
+    "id": "geo-7",
+    "category": "Geography",
+    "difficulty": "hard",
+    "question": "Qual é a capital da Austrália?",
+    "answers": ["Sydney", "Melbourne", "Brisbane", "Canberra"],
+    "correctAnswer": "Canberra"
+  },
+  {
+    "id": "geo-8",
+    "category": "Geography",
+    "difficulty": "hard",
+    "question": "Qual desses países é um enclave completamente cercado pela África do Sul?",
+    "answers": ["Lesoto", "Essuatíni (Suazilândia)", "Botsuana", "Namíbia"],
+    "correctAnswer": "Lesoto"
+  },
+  {
+    "id": "geo-9",
+    "category": "Geography",
+    "difficulty": "hard",
+    "question": "Qual é o deserto mais seco do mundo?",
+    "answers": ["Deserto do Saara", "Deserto de Gobi", "Deserto do Atacama", "Deserto de Kalahari"],
+    "correctAnswer": "Deserto do Atacama"
+  },
+  {
+    "id": "tech-1",
+    "category": "Technology",
+    "difficulty": "easy",
+    "question": "O que significa a sigla 'WWW' na internet?",
+    "answers": ["World Wide Web", "World Wide Waves", "Web World Wide", "World Web Wide"],
+    "correctAnswer": "World Wide Web"
+  },
+  {
+    "id": "tech-2",
+    "category": "Technology",
+    "difficulty": "easy",
+    "question": "Quem fundou a Microsoft ao lado de Paul Allen?",
+    "answers": ["Steve Jobs", "Mark Zuckerberg", "Bill Gates", "Jeff Bezos"],
+    "correctAnswer": "Bill Gates"
+  },
+  {
+    "id": "tech-3",
+    "category": "Technology",
+    "difficulty": "easy",
+    "question": "Qual é o principal sistema operacional para dispositivos móveis desenvolvido pelo Google?",
+    "answers": ["iOS", "Android", "Windows Mobile", "Symbian"],
+    "correctAnswer": "Android"
+  },
+  {
+    "id": "tech-4",
+    "category": "Technology",
+    "difficulty": "medium",
+    "question": "Qual linguagem de programação é amplamente conhecida como a linguagem dos navegadores web?",
+    "answers": ["Python", "Java", "C++", "JavaScript"],
+    "correctAnswer": "JavaScript"
+  },
+  {
+    "id": "tech-5",
+    "category": "Technology",
+    "difficulty": "medium",
+    "question": "O que significa a sigla CPU?",
+    "answers": ["Central Processing Unit", "Computer Personal Unit", "Control Process Unit", "Core Power Utility"],
+    "correctAnswer": "Central Processing Unit"
+  },
+  {
+    "id": "tech-6",
+    "category": "Technology",
+    "difficulty": "medium",
+    "question": "Em qual ano o primeiro iPhone foi lançado?",
+    "answers": ["2005", "2007", "2008", "2010"],
+    "correctAnswer": "2007"
+  },
+  {
+    "id": "tech-7",
+    "category": "Technology",
+    "difficulty": "hard",
+    "question": "Quem é frequentemente considerado o criador do Bitcoin?",
+    "answers": ["Vitalik Buterin", "Satoshi Nakamoto", "Elon Musk", "Linus Torvalds"],
+    "correctAnswer": "Satoshi Nakamoto"
+  },
+  {
+    "id": "tech-8",
+    "category": "Technology",
+    "difficulty": "hard",
+    "question": "Qual protocolo de rede é usado para transferir páginas web de forma segura?",
+    "answers": ["HTTP", "HTTPS", "FTP", "SFTP"],
+    "correctAnswer": "HTTPS"
+  },
+  {
+    "id": "tech-9",
+    "category": "Technology",
+    "difficulty": "hard",
+    "question": "Qual empresa desenvolveu o supercomputador Watson?",
+    "answers": ["IBM", "Microsoft", "Google", "Intel"],
+    "correctAnswer": "IBM"
+  },
+  {
+    "id": "mov-1",
+    "category": "Movies",
+    "difficulty": "easy",
+    "question": "Qual filme de animação da Disney conta com a música 'Let It Go'?",
+    "answers": ["Toy Story", "Enrolados", "Frozen", "Moana"],
+    "correctAnswer": "Frozen"
+  },
+  {
+    "id": "mov-2",
+    "category": "Movies",
+    "difficulty": "easy",
+    "question": "Quem interpreta o Homem de Ferro no Universo Cinematográfico da Marvel?",
+    "answers": ["Chris Evans", "Robert Downey Jr.", "Chris Hemsworth", "Mark Ruffalo"],
+    "correctAnswer": "Robert Downey Jr."
+  },
+  {
+    "id": "mov-3",
+    "category": "Movies",
+    "difficulty": "easy",
+    "question": "Qual é o nome do ogro verde protagonista da famosa franquia da DreamWorks?",
+    "answers": ["Fiona", "Shrek", "Burro", "Gato de Botas"],
+    "correctAnswer": "Shrek"
+  },
+  {
+    "id": "mov-4",
+    "category": "Movies",
+    "difficulty": "medium",
+    "question": "Qual filme ganhou o Oscar de Melhor Filme em 2020, sendo o primeiro de língua não inglesa a vencer?",
+    "answers": ["Roma", "Parasita", "O Irlandês", "1917"],
+    "correctAnswer": "Parasita"
+  },
+  {
+    "id": "mov-5",
+    "category": "Movies",
+    "difficulty": "medium",
+    "question": "Quem dirigiu a trilogia de filmes 'O Senhor dos Anéis'?",
+    "answers": ["Christopher Nolan", "Steven Spielberg", "Peter Jackson", "James Cameron"],
+    "correctAnswer": "Peter Jackson"
+  },
+  {
+    "id": "mov-6",
+    "category": "Movies",
+    "difficulty": "medium",
+    "question": "Qual ator estrelou o filme 'Matrix' como o personagem Neo?",
+    "answers": ["Brad Pitt", "Keanu Reeves", "Johnny Depp", "Tom Cruise"],
+    "correctAnswer": "Keanu Reeves"
+  },
+  {
+    "id": "mov-7",
+    "category": "Movies",
+    "difficulty": "hard",
+    "question": "Qual foi o primeiro longa-metragem de animação lançado na história do cinema?",
+    "answers": ["Fantasia", "Branca de Neve e os Sete Anões", "Pinóquio", "Dumbo"],
+    "correctAnswer": "Branca de Neve e os Sete Anões"
+  },
+  {
+    "id": "mov-8",
+    "category": "Movies",
+    "difficulty": "hard",
+    "question": "Qual filme de ficção científica de 1982 foi dirigido por Ridley Scott?",
+    "answers": ["Blade Runner", "Alien", "E.T.", "Duna"],
+    "correctAnswer": "Blade Runner"
+  },
+  {
+    "id": "mov-9",
+    "category": "Movies",
+    "difficulty": "hard",
+    "question": "Quem é a pessoa com o maior número de indicações ao Oscar de atuação na história?",
+    "answers": ["Katharine Hepburn", "Meryl Streep", "Jack Nicholson", "Bette Davis"],
+    "correctAnswer": "Meryl Streep"
+  },
+  {
+    "id": "mus-1",
+    "category": "Music",
+    "difficulty": "easy",
+    "question": "Quem é conhecido mundialmente como o 'Rei do Pop'?",
+    "answers": ["Elvis Presley", "Michael Jackson", "Freddie Mercury", "Prince"],
+    "correctAnswer": "Michael Jackson"
+  },
+  {
+    "id": "mus-2",
+    "category": "Music",
+    "difficulty": "easy",
+    "question": "Quantos integrantes formavam os Beatles?",
+    "answers": ["3", "4", "5", "6"],
+    "correctAnswer": "4"
+  },
+  {
+    "id": "mus-3",
+    "category": "Music",
+    "difficulty": "easy",
+    "question": "Qual cantora pop lançou os álbuns '19', '21' e '25'?",
+    "answers": ["Taylor Swift", "Beyoncé", "Adele", "Rihanna"],
+    "correctAnswer": "Adele"
+  },
+  {
+    "id": "mus-4",
+    "category": "Music",
+    "difficulty": "medium",
+    "question": "Qual banda de rock britânica lançou a música 'Bohemian Rhapsody'?",
+    "answers": ["Led Zeppelin", "Pink Floyd", "Queen", "The Rolling Stones"],
+    "correctAnswer": "Queen"
+  },
+  {
+    "id": "mus-5",
+    "category": "Music",
+    "difficulty": "medium",
+    "question": "Qual instrumento musical tem 88 teclas no padrão moderno?",
+    "answers": ["Órgão", "Harpa", "Piano", "Teclado Sintetizador"],
+    "correctAnswer": "Piano"
+  },
+  {
+    "id": "mus-6",
+    "category": "Music",
+    "difficulty": "medium",
+    "question": "Quem compôs a famosa 'Nona Sinfonia'?",
+    "answers": ["Wolfgang Amadeus Mozart", "Ludwig van Beethoven", "Johann Sebastian Bach", "Frederic Chopin"],
+    "correctAnswer": "Ludwig van Beethoven"
+  },
+  {
+    "id": "mus-7",
+    "category": "Music",
+    "difficulty": "hard",
+    "question": "Quem é o vocalista principal da banda U2?",
+    "answers": ["The Edge", "Bono Vox", "Adam Clayton", "Larry Mullen Jr."],
+    "correctAnswer": "Bono Vox"
+  },
+  {
+    "id": "mus-8",
+    "category": "Music",
+    "difficulty": "hard",
+    "question": "Em qual década o festival original de Woodstock foi realizado?",
+    "answers": ["Década de 1950", "Década de 1960", "Década de 1970", "Década de 1980"],
+    "correctAnswer": "Década de 1960"
+  },
+  {
+    "id": "mus-9",
+    "category": "Music",
+    "difficulty": "hard",
+    "question": "Qual famoso cantor de Reggae compôs a música 'Redemption Song'?",
+    "answers": ["Bob Marley", "Peter Tosh", "Jimmy Cliff", "Ziggy Marley"],
+    "correctAnswer": "Bob Marley"
+  },
+  {
+    "id": "spt-1",
+    "category": "Sports",
+    "difficulty": "easy",
+    "question": "Quantos jogadores formam um time de futebol em campo?",
+    "answers": ["10", "11", "12", "9"],
+    "correctAnswer": "11"
+  },
+  {
+    "id": "spt-2",
+    "category": "Sports",
+    "difficulty": "easy",
+    "question": "De quantos em quantos anos ocorrem as Olimpíadas?",
+    "answers": ["2", "4", "5", "3"],
+    "correctAnswer": "4"
+  },
+  {
+    "id": "spt-3",
+    "category": "Sports",
+    "difficulty": "easy",
+    "question": "Qual país sediou e venceu a primeira Copa do Mundo de Futebol em 1930?",
+    "answers": ["Brasil", "Uruguai", "Itália", "Argentina"],
+    "correctAnswer": "Uruguai"
+  },
+  {
+    "id": "spt-4",
+    "category": "Sports",
+    "difficulty": "medium",
+    "question": "Qual piloto brasileiro de Fórmula 1 conquistou três campeonatos mundiais?",
+    "answers": ["Emerson Fittipaldi", "Nelson Piquet", "Ayrton Senna", "Rubens Barrichello"],
+    "correctAnswer": "Ayrton Senna"
+  },
+  {
+    "id": "spt-5",
+    "category": "Sports",
+    "difficulty": "medium",
+    "question": "Qual esporte utiliza os termos 'strike', 'spare' e 'canal'?",
+    "answers": ["Golfe", "Boliche", "Beisebol", "Tênis"],
+    "correctAnswer": "Boliche"
+  },
+  {
+    "id": "spt-6",
+    "category": "Sports",
+    "difficulty": "medium",
+    "question": "Quem é o maior medalhista olímpico de todos os tempos?",
+    "answers": ["Usain Bolt", "Michael Phelps", "Simone Biles", "Carl Lewis"],
+    "correctAnswer": "Michael Phelps"
+  },
+  {
+    "id": "spt-7",
+    "category": "Sports",
+    "difficulty": "hard",
+    "question": "Onde serão realizadas as Olimpíadas de 2028?",
+    "answers": ["Paris", "Los Angeles", "Tóquio", "Brisbane"],
+    "correctAnswer": "Los Angeles"
+  },
+  {
+    "id": "spt-8",
+    "category": "Sports",
+    "difficulty": "hard",
+    "question": "Quantos pontos vale um 'touchdown' no futebol americano (sem a conversão)?",
+    "answers": ["3", "6", "7", "5"],
+    "correctAnswer": "6"
+  },
+  {
+    "id": "spt-9",
+    "category": "Sports",
+    "difficulty": "hard",
+    "question": "Qual tenista masculino detém o recorde de mais títulos do Grand Slam (até o final de 2023)?",
+    "answers": ["Roger Federer", "Rafael Nadal", "Novak Djokovic", "Pete Sampras"],
+    "correctAnswer": "Novak Djokovic"
+  },
+  {
+    "id": "gk-10",
+    "category": "General Knowledge",
+    "difficulty": "easy",
+    "question": "Qual é o principal ingrediente do chocolate?",
+    "answers": ["Leite", "Cacau", "Açúcar", "Avelã"],
+    "correctAnswer": "Cacau"
+  },
+  {
+    "id": "gk-11",
+    "category": "General Knowledge",
+    "difficulty": "medium",
+    "question": "Quem escreveu o clássico da literatura brasileira 'Dom Casmurro'?",
+    "answers": ["José de Alencar", "Machado de Assis", "Clarice Lispector", "Monteiro Lobato"],
+    "correctAnswer": "Machado de Assis"
+  },
+  {
+    "id": "gk-12",
+    "category": "General Knowledge",
+    "difficulty": "hard",
+    "question": "Qual é a capital da Islândia?",
+    "answers": ["Reykjavík", "Copenhague", "Oslo", "Estocolmo"],
+    "correctAnswer": "Reykjavík"
+  },
+  {
+    "id": "sci-10",
+    "category": "Science",
+    "difficulty": "easy",
+    "question": "Qual é o principal gás que respiramos?",
+    "answers": ["Oxigênio", "Nitrogênio", "Gás Carbônico", "Hélio"],
+    "correctAnswer": "Oxigênio"
+  },
+  {
+    "id": "sci-11",
+    "category": "Science",
+    "difficulty": "medium",
+    "question": "Qual metal é líquido à temperatura ambiente?",
+    "answers": ["Cobre", "Mercúrio", "Chumbo", "Alumínio"],
+    "correctAnswer": "Mercúrio"
+  },
+  {
+    "id": "sci-12",
+    "category": "Science",
+    "difficulty": "hard",
+    "question": "Qual é a principal função dos glóbulos vermelhos no sangue?",
+    "answers": ["Combater infecções", "Coagulação", "Transportar oxigênio", "Produzir anticorpos"],
+    "correctAnswer": "Transportar oxigênio"
+  },
+  {
+    "id": "hist-10",
+    "category": "History",
+    "difficulty": "easy",
+    "question": "Quem pintou o teto da Capela Sistina?",
+    "answers": ["Michelangelo", "Leonardo da Vinci", "Rafael", "Donatello"],
+    "correctAnswer": "Michelangelo"
+  },
+  {
+    "id": "hist-11",
+    "category": "History",
+    "difficulty": "medium",
+    "question": "Qual foi a principal causa da queda do Império Romano do Ocidente?",
+    "answers": ["Invasões bárbaras", "Erupção de vulcão", "Guerra Civil Americana", "Ataques vikings"],
+    "correctAnswer": "Invasões bárbaras"
+  },
+  {
+    "id": "hist-12",
+    "category": "History",
+    "difficulty": "hard",
+    "question": "Em que ano a Lei Áurea aboliu formalmente a escravidão no Brasil?",
+    "answers": ["1822", "1888", "1889", "1808"],
+    "correctAnswer": "1888"
+  },
+  {
+    "id": "geo-10",
+    "category": "Geography",
+    "difficulty": "easy",
+    "question": "Qual país tem o formato geométrico parecido com uma bota?",
+    "answers": ["Espanha", "Itália", "Grécia", "Portugal"],
+    "correctAnswer": "Itália"
+  },
+  {
+    "id": "geo-11",
+    "category": "Geography",
+    "difficulty": "medium",
+    "question": "Em qual continente fica localizado o Deserto do Saara?",
+    "answers": ["Ásia", "África", "Oceania", "América do Sul"],
+    "correctAnswer": "África"
+  },
+  {
+    "id": "geo-12",
+    "category": "Geography",
+    "difficulty": "hard",
+    "question": "Qual é o maior arquipélago do mundo?",
+    "answers": ["Filipinas", "Japão", "Indonésia", "Havaí"],
+    "correctAnswer": "Indonésia"
+  },
+  {
+    "id": "tech-10",
+    "category": "Technology",
+    "difficulty": "easy",
+    "question": "O que a sigla PDF representa?",
+    "answers": ["Portable Document Format", "Personal Digital Folder", "Printable Document File", "Private Data File"],
+    "correctAnswer": "Portable Document Format"
+  },
+  {
+    "id": "tech-11",
+    "category": "Technology",
+    "difficulty": "medium",
+    "question": "Qual é o banco de dados relacional de código aberto mais popular?",
+    "answers": ["MongoDB", "Redis", "MySQL", "Oracle"],
+    "correctAnswer": "MySQL"
+  },
+  {
+    "id": "tech-12",
+    "category": "Technology",
+    "difficulty": "hard",
+    "question": "Qual foi a primeira linguagem de programação de alto nível desenvolvida?",
+    "answers": ["C", "Fortran", "Lisp", "COBOL"],
+    "correctAnswer": "Fortran"
+  },
+  {
+    "id": "mov-10",
+    "category": "Movies",
+    "difficulty": "easy",
+    "question": "Quem interpretou a Hermione na franquia 'Harry Potter'?",
+    "answers": ["Emma Watson", "Kristen Stewart", "Natalie Portman", "Scarlett Johansson"],
+    "correctAnswer": "Emma Watson"
+  },
+  {
+    "id": "mov-11",
+    "category": "Movies",
+    "difficulty": "medium",
+    "question": "Qual é o nome da cidade fictícia onde se passa a história do Batman?",
+    "answers": ["Metropolis", "Gotham City", "Central City", "Star City"],
+    "correctAnswer": "Gotham City"
+  },
+  {
+    "id": "mov-12",
+    "category": "Movies",
+    "difficulty": "hard",
+    "question": "Quantos Oscars o filme 'Titanic' ganhou?",
+    "answers": ["9", "10", "11", "12"],
+    "correctAnswer": "11"
+  },
+  {
+    "id": "mus-10",
+    "category": "Music",
+    "difficulty": "easy",
+    "question": "Qual estilo musical nasceu nos subúrbios dos Estados Unidos na década de 1970 com DJs e rap?",
+    "answers": ["Hip-hop", "Jazz", "Samba", "Country"],
+    "correctAnswer": "Hip-hop"
+  },
+  {
+    "id": "mus-11",
+    "category": "Music",
+    "difficulty": "medium",
+    "question": "De qual país é originária a cantora Shakira?",
+    "answers": ["Brasil", "Espanha", "Colômbia", "Argentina"],
+    "correctAnswer": "Colômbia"
+  },
+  {
+    "id": "mus-12",
+    "category": "Music",
+    "difficulty": "hard",
+    "question": "Qual compositor do período barroco ficou conhecido pela obra 'O Messias'?",
+    "answers": ["Vivaldi", "Handel", "Bach", "Telemann"],
+    "correctAnswer": "Handel"
+  },
+  {
+    "id": "spt-10",
+    "category": "Sports",
+    "difficulty": "easy",
+    "question": "Qual país é conhecido como a pátria do futebol por tê-lo inventado?",
+    "answers": ["Brasil", "Inglaterra", "Alemanha", "França"],
+    "correctAnswer": "Inglaterra"
+  },
+  {
+    "id": "spt-11",
+    "category": "Sports",
+    "difficulty": "medium",
+    "question": "Quantos anéis coloridos compõem o símbolo dos Jogos Olímpicos?",
+    "answers": ["4", "5", "6", "7"],
+    "correctAnswer": "5"
+  },
+  {
+    "id": "spt-12",
+    "category": "Sports",
+    "difficulty": "hard",
+    "question": "Qual nação venceu a Copa do Mundo da FIFA em 2010?",
+    "answers": ["Espanha", "Holanda", "Alemanha", "Itália"],
+    "correctAnswer": "Espanha"
+  },
+  {
+    "id": "gk-13",
+    "category": "General Knowledge",
+    "difficulty": "easy",
+    "question": "Qual animal terrestre é conhecido como o mais rápido do mundo?",
+    "answers": ["Leão", "Guepardo", "Cavalo", "Antilocapra"],
+    "correctAnswer": "Guepardo"
+  },
+  {
+    "id": "gk-14",
+    "category": "General Knowledge",
+    "difficulty": "medium",
+    "question": "Qual metal precioso tem o símbolo químico 'Au'?",
+    "answers": ["Prata", "Cobre", "Platina", "Ouro"],
+    "correctAnswer": "Ouro"
+  },
+  {
+    "id": "gk-15",
+    "category": "General Knowledge",
+    "difficulty": "hard",
+    "question": "Quem pintou 'Guernica'?",
+    "answers": ["Pablo Picasso", "Salvador Dalí", "Diego Rivera", "Joan Miró"],
+    "correctAnswer": "Pablo Picasso"
+  },
+  {
+    "id": "sci-13",
+    "category": "Science",
+    "difficulty": "easy",
+    "question": "Qual é a fórmula da água?",
+    "answers": ["CO2", "H2O", "O2", "NaCl"],
+    "correctAnswer": "H2O"
+  },
+  {
+    "id": "sci-14",
+    "category": "Science",
+    "difficulty": "medium",
+    "question": "Qual é o maior órgão do corpo humano?",
+    "answers": ["Fígado", "Pele", "Cérebro", "Intestino"],
+    "correctAnswer": "Pele"
+  },
+  {
+    "id": "sci-15",
+    "category": "Science",
+    "difficulty": "hard",
+    "question": "Qual das seguintes partículas não tem carga elétrica?",
+    "answers": ["Próton", "Elétron", "Nêutron", "Pósitron"],
+    "correctAnswer": "Nêutron"
+  },
+  {
+    "id": "hist-13",
+    "category": "History",
+    "difficulty": "easy",
+    "question": "Quem descobriu o caminho marítimo para a Índia em 1498?",
+    "answers": ["Pedro Álvares Cabral", "Vasco da Gama", "Cristóvão Colombo", "Fernão de Magalhães"],
+    "correctAnswer": "Vasco da Gama"
+  },
+  {
+    "id": "hist-14",
+    "category": "History",
+    "difficulty": "medium",
+    "question": "Qual imperador francês foi exilado na ilha de Santa Helena?",
+    "answers": ["Luís XIV", "Napoleão Bonaparte", "Carlos Magno", "Luís XVI"],
+    "correctAnswer": "Napoleão Bonaparte"
+  },
+  {
+    "id": "hist-15",
+    "category": "History",
+    "difficulty": "hard",
+    "question": "Quem foi o primeiro imperador de Roma?",
+    "answers": ["Júlio César", "César Augusto", "Nero", "Marco Aurélio"],
+    "correctAnswer": "César Augusto"
+  },
+  {
+    "id": "geo-13",
+    "category": "Geography",
+    "difficulty": "easy",
+    "question": "Em qual continente se localiza o Japão?",
+    "answers": ["Europa", "Ásia", "Oceania", "América"],
+    "correctAnswer": "Ásia"
+  },
+  {
+    "id": "geo-14",
+    "category": "Geography",
+    "difficulty": "medium",
+    "question": "Qual é o país mais populoso da Terra (dados recentes)?",
+    "answers": ["Estados Unidos", "China", "Índia", "Indonésia"],
+    "correctAnswer": "Índia"
+  },
+  {
+    "id": "geo-15",
+    "category": "Geography",
+    "difficulty": "hard",
+    "question": "Qual é a capital do Canadá?",
+    "answers": ["Toronto", "Vancouver", "Montreal", "Ottawa"],
+    "correctAnswer": "Ottawa"
+  },
+  {
+    "id": "tech-13",
+    "category": "Technology",
+    "difficulty": "easy",
+    "question": "Quem é o CEO e fundador da Tesla?",
+    "answers": ["Jeff Bezos", "Elon Musk", "Bill Gates", "Mark Zuckerberg"],
+    "correctAnswer": "Elon Musk"
+  },
+  {
+    "id": "tech-14",
+    "category": "Technology",
+    "difficulty": "medium",
+    "question": "Qual é o principal protocolo de comunicação utilizado para o envio de e-mails?",
+    "answers": ["FTP", "SMTP", "HTTP", "DHCP"],
+    "correctAnswer": "SMTP"
+  },
+  {
+    "id": "tech-15",
+    "category": "Technology",
+    "difficulty": "hard",
+    "question": "Em qual ano a linguagem Java foi lançada oficialmente pela Sun Microsystems?",
+    "answers": ["1991", "1995", "1998", "2000"],
+    "correctAnswer": "1995"
+  },
+  {
+    "id": "mov-13",
+    "category": "Movies",
+    "difficulty": "easy",
+    "question": "Qual personagem de quadrinhos tem garras de adamantium?",
+    "answers": ["Batman", "Wolverine", "Homem-Aranha", "Homem de Ferro"],
+    "correctAnswer": "Wolverine"
+  },
+  {
+    "id": "mov-14",
+    "category": "Movies",
+    "difficulty": "medium",
+    "question": "Qual filme de ficção científica apresenta o monstro Xenomorfo?",
+    "answers": ["Predador", "Alien, o Oitavo Passageiro", "Interestelar", "O Exterminador do Futuro"],
+    "correctAnswer": "Alien, o Oitavo Passageiro"
+  },
+  {
+    "id": "mov-15",
+    "category": "Movies",
+    "difficulty": "hard",
+    "question": "Quem dirigiu o filme clássico 'Pulp Fiction: Tempo de Violência'?",
+    "answers": ["Martin Scorsese", "Quentin Tarantino", "Stanley Kubrick", "Steven Spielberg"],
+    "correctAnswer": "Quentin Tarantino"
+  },
+  {
+    "id": "mus-13",
+    "category": "Music",
+    "difficulty": "easy",
+    "question": "Qual cantor brasileiro compôs a icônica música 'Garota de Ipanema' ao lado de Vinicius de Moraes?",
+    "answers": ["Caetano Veloso", "Tom Jobim", "Gilberto Gil", "Roberto Carlos"],
+    "correctAnswer": "Tom Jobim"
+  },
+  {
+    "id": "mus-14",
+    "category": "Music",
+    "difficulty": "medium",
+    "question": "Qual foi a banda grunge de Seatle liderada por Kurt Cobain?",
+    "answers": ["Pearl Jam", "Nirvana", "Soundgarden", "Alice in Chains"],
+    "correctAnswer": "Nirvana"
+  },
+  {
+    "id": "mus-15",
+    "category": "Music",
+    "difficulty": "hard",
+    "question": "Quem é a artista feminina com maior número de Grammys ganhos na história (até 2023)?",
+    "answers": ["Taylor Swift", "Beyoncé", "Lady Gaga", "Madonna"],
+    "correctAnswer": "Beyoncé"
+  },
+  {
+    "id": "spt-13",
+    "category": "Sports",
+    "difficulty": "easy",
+    "question": "Qual superestrela do basquete usava a camisa 23 no Chicago Bulls?",
+    "answers": ["Kobe Bryant", "LeBron James", "Michael Jordan", "Shaquille O'Neal"],
+    "correctAnswer": "Michael Jordan"
+  },
+  {
+    "id": "spt-14",
+    "category": "Sports",
+    "difficulty": "medium",
+    "question": "Qual país venceu a Copa do Mundo masculina da FIFA em 2022?",
+    "answers": ["França", "Brasil", "Argentina", "Croácia"],
+    "correctAnswer": "Argentina"
+  },
+  {
+    "id": "spt-15",
+    "category": "Sports",
+    "difficulty": "hard",
+    "question": "Em qual cidade brasileira foram realizados os Jogos Olímpicos de Verão de 2016?",
+    "answers": ["São Paulo", "Rio de Janeiro", "Brasília", "Belo Horizonte"],
+    "correctAnswer": "Rio de Janeiro"
+  }
+]

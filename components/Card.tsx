@@ -1,10 +1,10 @@
 import React from 'react';
-import { StyleSheet, View, ViewStyle, Pressable } from 'react-native';
+import { StyleSheet, View, ViewStyle, Pressable, StyleProp } from 'react-native';
 import { COLORS, BORDER_RADIUS } from '../constants/theme';
 
 interface CardProps {
   children: React.ReactNode;
-  style?: ViewStyle;
+  style?: StyleProp<ViewStyle>;
   onPress?: () => void;
 }
 

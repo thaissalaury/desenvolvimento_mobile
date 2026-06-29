@@ -17,7 +17,7 @@ export function useSound() {
     Audio.setAudioModeAsync({
       playsInSilentModeIOS: true,
       staysActiveInBackground: false,
-      shouldRouteThroughEarpieceAndroid: false,
+      playThroughEarpieceAndroid: false,
     }).catch(err => console.log('Audio mode config error:', err));
 
     // Load sounds on mount

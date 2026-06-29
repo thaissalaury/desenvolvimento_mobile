@@ -1,5 +1,5 @@
 import * as SecureStore from 'expo-secure-store';
-import * as FileSystem from 'expo-file-system';
+import * as FileSystem from 'expo-file-system/legacy';
 import { GameStats, GameHistory } from '../types';
 
 const HISTORY_FILE_PATH = `${FileSystem.documentDirectory}history.json`;

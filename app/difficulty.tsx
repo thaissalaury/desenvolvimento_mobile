@@ -57,7 +57,7 @@ export default function DifficultySelection() {
                 onPress={() => handleSelect(option.key)}
                 style={[
                   styles.difficultyCard,
-                  isSelected && { borderColor: COLORS.primary, backgroundColor: '#EEF2FF' },
+                  isSelected ? { borderColor: COLORS.primary, backgroundColor: '#EEF2FF' } : {},
                 ]}
               >
                 <View style={styles.cardLayout}>

@@ -60,7 +60,7 @@ export default function CategorySelection() {
                 onPress={() => handleSelect(category.name)}
                 style={[
                   styles.categoryCard,
-                  isSelected && { borderColor: COLORS.primary, backgroundColor: '#EEF2FF' },
+                  isSelected ? { borderColor: COLORS.primary, backgroundColor: '#EEF2FF' } : {},
                 ]}
               >
                 <View style={[styles.iconContainer, { backgroundColor: `${category.color}15` }]}>

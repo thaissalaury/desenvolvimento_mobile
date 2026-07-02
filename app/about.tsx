@@ -9,10 +9,12 @@ import { useQuiz } from '../contexts/QuizContext';
 import { Ionicons } from '@expo/vector-icons';
 import { useSound } from '../hooks/useSound';
 
+// Tela Sobre o Aplicativo - Exibe créditos, pilha tecnológica, histórico de partidas recentes e limpa dados
 export default function About() {
-  const { clearAllHistory, history } = useQuiz();
+  const { clearAllHistory, history } = useQuiz(); // Recupera o método de reset e histórico do contexto
   const { playClick } = useSound();
 
+  // Aciona caixa de diálogo nativa de confirmação para exclusão de estatísticas e históricos
   const handleClearHistory = () => {
     playClick();
     Alert.alert(
@@ -27,7 +29,7 @@ export default function About() {
           text: 'Limpar',
           style: 'destructive',
           onPress: async () => {
-            await clearAllHistory();
+            await clearAllHistory(); // Apaga do SecureStore e deleta arquivo do FileSystem
             Alert.alert('Sucesso', 'Todo o histórico e estatísticas foram limpos.');
           },
         },
@@ -37,10 +39,12 @@ export default function About() {
 
   return (
     <ScreenContainer statusBarStyle="dark">
+      {/* Cabeçalho superior da tela */}
       <Header title="Sobre o App" />
+      
       <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
         
-        {/* Info Card */}
+        {/* Cartão de Informações Gerais do Aplicativo */}
         <Card style={styles.card}>
           <View style={styles.iconContainer}>
             <Ionicons name="trophy-outline" size={40} color={COLORS.primary} />
@@ -52,7 +56,7 @@ export default function About() {
           </Text>
         </Card>
 
-        {/* Tech Stack Card */}
+        {/* Cartão detalhando a Pilha Tecnológica do Aplicativo (SDKs do Expo) */}
         <Card style={styles.card}>
           <Text style={styles.sectionTitle}>Tecnologias Utilizadas</Text>
           <View style={styles.techList}>
@@ -83,7 +87,7 @@ export default function About() {
           </View>
         </Card>
 
-        {/* Game History List */}
+        {/* Lista de Histórico das últimas 5 partidas realizadas, se existirem */}
         {history.length > 0 && (
           <Card style={styles.card}>
             <Text style={styles.sectionTitle}>Últimos Jogos</Text>
@@ -106,7 +110,7 @@ export default function About() {
           </Card>
         )}
 
-        {/* Storage Actions */}
+        {/* Botão de Limpeza total dos dados persistidos */}
         <Button
           title="Limpar Histórico e Dados"
           onPress={handleClearHistory}
@@ -220,3 +224,4 @@ const styles = StyleSheet.create({
     color: COLORS.text.secondary,
   },
 });
+

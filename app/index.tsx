@@ -11,19 +11,20 @@ import { useSound } from '../hooks/useSound';
 
 const { width } = Dimensions.get('window');
 
+// Tela Inicial do aplicativo (Index / Home) - Gerencia a Splash animada e a tela de início
 export default function Home() {
   const router = useRouter();
-  const { stats } = useQuiz();
-  const { playClick } = useSound();
-  const [showSplash, setShowSplash] = useState(true);
+  const { stats } = useQuiz();       // Obtém as estatísticas locais salvas do contexto global do Quiz
+  const { playClick } = useSound();  // Hook para efeitos sonoros
+  const [showSplash, setShowSplash] = useState(true); // Controla a exibição temporária da tela de splash
 
-  // Animation values
-  const logoFade = useRef(new Animated.Value(0)).current;
-  const logoScale = useRef(new Animated.Value(0.8)).current;
-  const homeFade = useRef(new Animated.Value(0)).current;
+  // Referências para valores de animação reativa do React Native (Animated)
+  const logoFade = useRef(new Animated.Value(0)).current;  // Controle de opacidade da logo na splash
+  const logoScale = useRef(new Animated.Value(0.8)).current; // Controle de escala/tamanho da logo na splash
+  const homeFade = useRef(new Animated.Value(0)).current;   // Controle de opacidade para a interface da home
 
   useEffect(() => {
-    // Splash screen animation
+    // Executa em paralelo as animações de surgimento gradual (fade-in) e zoom (spring) da logo na splash
     Animated.parallel([
       Animated.timing(logoFade, {
         toValue: 1,
@@ -37,15 +38,17 @@ export default function Home() {
       }),
     ]).start();
 
-    // Transition to Home Screen after 2.5 seconds
+    // Timer de 2.5 segundos para ocultar a tela de splash e exibir a interface da home
     const timer = setTimeout(() => {
+      // Faz o fade-out da logo na splash
       Animated.timing(logoFade, {
         toValue: 0,
         duration: 500,
         useNativeDriver: true,
       }).start(() => {
-        setShowSplash(false);
-        // Fade in Home Screen
+        setShowSplash(false); // Oculta definitivamente o componente da splash
+        
+        // Inicia o fade-in suave para os elementos da tela inicial (Home)
         Animated.timing(homeFade, {
           toValue: 1,
           duration: 600,
@@ -57,16 +60,19 @@ export default function Home() {
     return () => clearTimeout(timer);
   }, []);
 
+  // Navega para a seleção de categorias do quiz tocando o efeito sonoro de clique
   const handleStart = () => {
     playClick();
     router.push('/category');
   };
 
+  // Navega para a tela Sobre o App tocando o efeito sonoro de clique
   const handleAbout = () => {
     playClick();
     router.push('/about');
   };
 
+  // Se o estado indicar a splash, renderiza a tela com fundo gradiente escuro e troféu animado
   if (showSplash) {
     return (
       <View style={styles.container}>
@@ -91,6 +97,7 @@ export default function Home() {
     );
   }
 
+  // Renderiza a interface principal da Home após a splash ser desativada
   return (
     <View style={styles.container}>
       <LinearGradient
@@ -102,6 +109,7 @@ export default function Home() {
           style={{ opacity: homeFade }}
           showsVerticalScrollIndicator={false}
         >
+          {/* Seção do cabeçalho da Home com o logotipo do QuizMaster */}
           <View style={styles.headerSection}>
             <View style={styles.logoSmall}>
               <Ionicons name="trophy" size={28} color={COLORS.primary} />
@@ -110,7 +118,7 @@ export default function Home() {
             <Text style={styles.subtitle}>Desafie seu conhecimento.</Text>
           </View>
 
-          {/* Stats Overview */}
+          {/* Painel do Dashboard com as estatísticas acumuladas do jogador */}
           <Card style={styles.statsCard}>
             <Text style={styles.statsTitle}>Suas Estatísticas</Text>
             <View style={styles.statsGrid}>
@@ -132,6 +140,7 @@ export default function Home() {
             </View>
           </Card>
 
+          {/* Botões de Ação principais para o usuário interagir */}
           <View style={styles.buttonSection}>
             <Button
               title="Iniciar Quiz"
@@ -160,7 +169,7 @@ const styles = StyleSheet.create({
   gradient: {
     flex: 1,
   },
-  // Splash Screen Styles
+  // Estilos da Tela de Splash
   splashContent: {
     flex: 1,
     justifyContent: 'center',
@@ -189,7 +198,7 @@ const styles = StyleSheet.create({
     color: 'rgba(255, 255, 255, 0.8)',
     marginTop: SPACING.xs,
   },
-  // Home Screen Styles
+  // Estilos da Home
   scrollContent: {
     flexGrow: 1,
     justifyContent: 'center',
@@ -265,3 +274,4 @@ const styles = StyleSheet.create({
     width: '100%',
   },
 });
+

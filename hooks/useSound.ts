@@ -1,26 +1,29 @@
 import { useEffect, useRef } from 'react';
 import { Audio } from 'expo-av';
 
+// Importação estática dos recursos de áudio locais (arquivos WAV)
 const clickSoundAsset = require('../assets/sounds/click.wav');
 const correctSoundAsset = require('../assets/sounds/correct.wav');
 const wrongSoundAsset = require('../assets/sounds/wrong.wav');
 const victorySoundAsset = require('../assets/sounds/victory.wav');
 
+// Hook customizado para gerenciar a reprodução de efeitos sonoros no aplicativo
 export function useSound() {
+  // Referências mutáveis para armazenar as instâncias de áudio carregadas do Expo AV
   const clickSoundRef = useRef<Audio.Sound | null>(null);
   const correctSoundRef = useRef<Audio.Sound | null>(null);
   const wrongSoundRef = useRef<Audio.Sound | null>(null);
   const victorySoundRef = useRef<Audio.Sound | null>(null);
 
   useEffect(() => {
-    // Configure audio mode
+    // Configura as opções globais de áudio no iOS e Android para reproduzir sons corretamente
     Audio.setAudioModeAsync({
-      playsInSilentModeIOS: true,
-      staysActiveInBackground: false,
-      playThroughEarpieceAndroid: false,
+      playsInSilentModeIOS: true,       // Permite tocar sons mesmo no modo silencioso do iOS
+      staysActiveInBackground: false,   // Pausa o som se o app for para segundo plano
+      playThroughEarpieceAndroid: false, // Força a saída de som pelo alto-falante principal (não fone de ouvido de chamada)
     }).catch(err => console.log('Audio mode config error:', err));
 
-    // Load sounds on mount
+    // Carrega assincronamente todos os arquivos de áudio em memória quando o componente monta
     const loadSounds = async () => {
       try {
         const { sound: click } = await Audio.Sound.createAsync(clickSoundAsset);
@@ -41,7 +44,7 @@ export function useSound() {
 
     loadSounds();
 
-    // Unload sounds on unmount
+    // Descarrega todos os arquivos de áudio da memória ao desmontar o hook para evitar vazamentos de memória (memory leaks)
     return () => {
       clickSoundRef.current?.unloadAsync();
       correctSoundRef.current?.unloadAsync();
@@ -50,16 +53,18 @@ export function useSound() {
     };
   }, []);
 
+  // Toca o som de clique padrão
   const playClick = async () => {
     try {
       if (clickSoundRef.current) {
-        await clickSoundRef.current.replayAsync();
+        await clickSoundRef.current.replayAsync(); // replayAsync garante que reinicie se já estiver tocando
       }
     } catch (e) {
       console.log('Play click sound error:', e);
     }
   };
 
+  // Toca o som de resposta correta
   const playCorrect = async () => {
     try {
       if (correctSoundRef.current) {
@@ -70,6 +75,7 @@ export function useSound() {
     }
   };
 
+  // Toca o som de resposta errada
   const playWrong = async () => {
     try {
       if (wrongSoundRef.current) {
@@ -80,6 +86,7 @@ export function useSound() {
     }
   };
 
+  // Toca o som de vitória ao finalizar o quiz com alta pontuação
   const playVictory = async () => {
     try {
       if (victorySoundRef.current) {
@@ -92,3 +99,4 @@ export function useSound() {
 
   return { playClick, playCorrect, playWrong, playVictory };
 }
+

@@ -5,13 +5,15 @@ import { COLORS, FONTS, SPACING } from '../constants/theme';
 import { useRouter } from 'expo-router';
 import * as Haptics from 'expo-haptics';
 
+// Definição das propriedades do cabeçalho customizado (Header)
 interface HeaderProps {
-  title: string;
-  showBackButton?: boolean;
-  onBackPress?: () => void;
-  rightAction?: React.ReactNode;
+  title: string;                 // Título exibido no cabeçalho
+  showBackButton?: boolean;      // Indica se o botão de voltar deve aparecer
+  onBackPress?: () => void;      // Callback personalizado para ação de voltar
+  rightAction?: React.ReactNode; // Elemento opcional alinhado à direita
 }
 
+// Cabeçalho customizado reutilizável nas telas do aplicativo
 export const Header: React.FC<HeaderProps> = ({
   title,
   showBackButton = true,
@@ -20,17 +22,20 @@ export const Header: React.FC<HeaderProps> = ({
 }) => {
   const router = useRouter();
 
+  // Função para lidar com o pressionamento do botão de voltar
   const handleBack = () => {
+    // Aciona um feedback tátil leve (vibração rápida)
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     if (onBackPress) {
-      onBackPress();
+      onBackPress(); // Executa o callback customizado se fornecido
     } else {
-      router.back();
+      router.back(); // Volta para a tela anterior no Expo Router
     }
   };
 
   return (
     <View style={styles.container}>
+      {/* Lado esquerdo: exibe o botão de voltar se showBackButton for verdadeiro */}
       <View style={styles.leftContainer}>
         {showBackButton && (
           <Pressable onPress={handleBack} style={styles.backButton}>
@@ -38,9 +43,13 @@ export const Header: React.FC<HeaderProps> = ({
           </Pressable>
         )}
       </View>
+
+      {/* Centro: exibe o título da tela com limite de 1 linha */}
       <Text style={styles.title} numberOfLines={1}>
         {title}
       </Text>
+
+      {/* Lado direito: espaço reservado para ações adicionais no cabeçalho */}
       <View style={styles.rightContainer}>{rightAction}</View>
     </View>
   );
@@ -76,3 +85,4 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
 });
+

@@ -10,13 +10,15 @@ import { useQuiz } from '../contexts/QuizContext';
 import { useSound } from '../hooks/useSound';
 import { Ionicons } from '@expo/vector-icons';
 
+// Interface tipando a estrutura estática de cada categoria de jogo
 interface CategoryItem {
-  name: string;
-  displayName: string;
-  icon: keyof typeof Ionicons.glyphMap;
-  color: string;
+  name: string;                                // Nome lógico inglês da categoria (usa para filtrar perguntas)
+  displayName: string;                         // Nome amigável em português exibido na tela
+  icon: keyof typeof Ionicons.glyphMap;        // Nome do ícone da biblioteca Ionicons
+  color: string;                               // Cor temática da categoria para o círculo de ícone
 }
 
+// Lista estática com as categorias disponíveis no QuizMaster
 const CATEGORIES: CategoryItem[] = [
   { name: 'General Knowledge', displayName: 'Conhecimentos Gerais', icon: 'earth-outline', color: '#3B82F6' },
   { name: 'Science', displayName: 'Ciência', icon: 'flask-outline', color: '#10B981' },
@@ -28,16 +30,19 @@ const CATEGORIES: CategoryItem[] = [
   { name: 'Sports', displayName: 'Esportes', icon: 'football-outline', color: '#10B981' },
 ];
 
+// Tela de Seleção de Categoria (CategorySelection)
 export default function CategorySelection() {
   const router = useRouter();
-  const { selectedCategory, selectCategory } = useQuiz();
+  const { selectedCategory, selectCategory } = useQuiz(); // Métodos e estado do contexto global
   const { playClick } = useSound();
 
+  // Seleciona a categoria e toca som de feedback
   const handleSelect = (categoryName: string) => {
     playClick();
     selectCategory(categoryName);
   };
 
+  // Avança para a seleção de dificuldade se houver categoria selecionada
   const handleContinue = () => {
     playClick();
     router.push('/difficulty');
@@ -45,14 +50,17 @@ export default function CategorySelection() {
 
   return (
     <ScreenContainer statusBarStyle="dark">
+      {/* Cabeçalho superior */}
       <Header title="Escolha a Categoria" />
       <View style={styles.content}>
         <Text style={styles.instruction}>
           Selecione um tema abaixo para desafiar suas habilidades:
         </Text>
 
+        {/* ScrollView renderizando a grid flexbox de duas colunas contendo os Cards clicáveis */}
         <ScrollView contentContainerStyle={styles.grid} showsVerticalScrollIndicator={false}>
           {CATEGORIES.map((category) => {
+            // Verifica se este item específico é a categoria atualmente selecionada
             const isSelected = selectedCategory?.toLowerCase() === category.name.toLowerCase();
             return (
               <Card
@@ -60,9 +68,11 @@ export default function CategorySelection() {
                 onPress={() => handleSelect(category.name)}
                 style={[
                   styles.categoryCard,
+                  // Aplica bordas e fundos destacados se estiver selecionada
                   isSelected ? { borderColor: COLORS.primary, backgroundColor: '#EEF2FF' } : {},
                 ]}
               >
+                {/* Ícone com círculo de fundo translúcido na cor da categoria */}
                 <View style={[styles.iconContainer, { backgroundColor: `${category.color}15` }]}>
                   <Ionicons
                     name={category.icon}
@@ -70,9 +80,11 @@ export default function CategorySelection() {
                     color={isSelected ? COLORS.primary : category.color}
                   />
                 </View>
+                {/* Texto da categoria */}
                 <Text style={[styles.categoryText, isSelected && styles.selectedCategoryText]}>
                   {category.displayName}
                 </Text>
+                {/* Badge/Selo de marcação de check no canto superior direito do Card se selecionado */}
                 {isSelected && (
                   <View style={styles.selectedBadge}>
                     <Ionicons name="checkmark" size={16} color="#FFFFFF" />
@@ -83,6 +95,7 @@ export default function CategorySelection() {
           })}
         </ScrollView>
 
+        {/* Rodapé fixado com botão para continuar (habilitado apenas se houver seleção) */}
         <View style={styles.footer}>
           <Button
             title="Continuar"
@@ -163,3 +176,4 @@ const styles = StyleSheet.create({
     width: '100%',
   },
 });
+

@@ -10,6 +10,7 @@ import { useQuiz } from '../contexts/QuizContext';
 import { useSound } from '../hooks/useSound';
 import * as Haptics from 'expo-haptics';
 
+// Tela Principal de Jogo do Quiz (Quiz) - Renderiza a pergunta ativa e suas alternativas
 export default function Quiz() {
   const router = useRouter();
   const {
@@ -18,15 +19,15 @@ export default function Quiz() {
     answerQuestion,
     nextQuestion,
     finishQuiz,
-  } = useQuiz();
+  } = useQuiz(); // Recupera estados e métodos do contexto global
   
-  const { playCorrect, playWrong } = useSound();
-  const [selectedOption, setSelectedOption] = useState<string | null>(null);
-  const [isAnswered, setIsAnswered] = useState(false);
+  const { playCorrect, playWrong } = useSound(); // Sons de feedback de acerto/erro
+  const [selectedOption, setSelectedOption] = useState<string | null>(null); // Grava a opção selecionada nesta pergunta
+  const [isAnswered, setIsAnswered] = useState(false); // Bloqueia interações após responder
 
   const question = filteredQuestions[currentQuestionIndex];
 
-  // If for some reason we have no questions (e.g., direct navigation), show a message
+  // Caso não existam perguntas carregadas (ex: navegação indevida), exibe tela de erro
   if (!question) {
     return (
       <ScreenContainer>
@@ -38,16 +39,17 @@ export default function Quiz() {
     );
   }
 
+  // Trata o toque na alternativa de resposta escolhida
   const handleOptionPress = async (option: string) => {
-    if (isAnswered) return;
+    if (isAnswered) return; // Evita cliques múltiplos
     
     setSelectedOption(option);
     setIsAnswered(true);
 
     const isCorrect = option === question.correctAnswer;
-    answerQuestion(isCorrect);
+    answerQuestion(isCorrect); // Registra a resposta no contexto para contabilidade do score
 
-    // Audio & Haptics Feedback
+    // Executa Feedbacks de Áudio e Vibrações táteis (Haptics)
     if (isCorrect) {
       playCorrect();
       Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
@@ -56,20 +58,22 @@ export default function Quiz() {
       Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error);
     }
 
-    // Auto-advance after 1.5 seconds
+    // Avanço automático com delay de 1.5 segundos (tempo para o usuário ver se acertou ou errou)
     setTimeout(async () => {
       const hasNext = nextQuestion();
       if (hasNext) {
+        // Zera os estados locais temporários da pergunta para a próxima
         setSelectedOption(null);
         setIsAnswered(false);
       } else {
-        // Finish Quiz and save statistics
+        // Caso chegue ao fim do Quiz (10 perguntas), finaliza gravando os dados e vai para Resultados
         await finishQuiz();
         router.replace('/results');
       }
     }, 1500);
   };
 
+  // Caixa de diálogo de alerta caso o usuário clique no botão de voltar/sair
   const handleQuit = () => {
     Alert.alert(
       'Sair do Jogo',
@@ -85,14 +89,16 @@ export default function Quiz() {
     );
   };
 
+  // Fração decimal representando a porcentagem atual da barra de progresso (ex: 0.1, 0.2, etc.)
   const progress = (currentQuestionIndex + 1) / filteredQuestions.length;
 
   return (
     <ScreenContainer statusBarStyle="dark">
+      {/* Cabeçalho superior com interceptação do botão voltar físico/nátivo para o método handleQuit */}
       <Header title="QuizMaster" showBackButton={true} onBackPress={handleQuit} />
       
       <View style={styles.content}>
-        {/* Progress Section */}
+        {/* Painel do Progresso Superior */}
         <View style={styles.progressSection}>
           <View style={styles.progressTextContainer}>
             <Text style={styles.categoryLabel}>{question.category}</Text>
@@ -100,15 +106,16 @@ export default function Quiz() {
               Pergunta {currentQuestionIndex + 1} de {filteredQuestions.length}
             </Text>
           </View>
+          {/* Barra de Progresso Animada */}
           <ProgressBar progress={progress} />
         </View>
 
-        {/* Question Section */}
+        {/* Quadro com o enunciado da Pergunta */}
         <View style={styles.questionSection}>
           <Text style={styles.questionText}>{question.question}</Text>
         </View>
 
-        {/* Answers List */}
+        {/* Lista de Alternativas de Resposta */}
         <View style={styles.answersSection}>
           {question.answers.map((option) => {
             const isSelected = selectedOption === option;
@@ -191,3 +198,4 @@ const styles = StyleSheet.create({
     width: '100%',
   },
 });
+

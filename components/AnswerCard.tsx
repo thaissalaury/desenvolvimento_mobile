@@ -3,16 +3,18 @@ import { StyleSheet, Text, Pressable, ViewStyle, View } from 'react-native';
 import { COLORS, BORDER_RADIUS, SPACING } from '../constants/theme';
 import { Ionicons } from '@expo/vector-icons';
 
+// Definição das propriedades do cartão de resposta (AnswerCard)
 interface AnswerCardProps {
-  text: string;
-  onPress: () => void;
-  isSelected: boolean;
-  isCorrect?: boolean; // defined after answer check
-  isWrong?: boolean; // defined after answer check
-  disabled?: boolean;
-  style?: ViewStyle;
+  text: string;           // Texto da alternativa de resposta
+  onPress: () => void;     // Callback disparado ao selecionar a alternativa
+  isSelected: boolean;     // Indica se o usuário marcou esta alternativa
+  isCorrect?: boolean;     // Indica se a resposta está correta (revelada após responder)
+  isWrong?: boolean;       // Indica se a resposta está errada (revelada após responder)
+  disabled?: boolean;      // Bloqueia interações após a resposta ser dada
+  style?: ViewStyle;       // Estilo customizado extra
 }
 
+// Componente para renderizar as opções de resposta no Quiz, com feedbacks visuais dinâmicos
 export const AnswerCard: React.FC<AnswerCardProps> = ({
   text,
   onPress,
@@ -27,17 +29,21 @@ export const AnswerCard: React.FC<AnswerCardProps> = ({
   let iconName: any = null;
   let iconColor = '';
 
+  // Determina o estado visual do componente com base nas propriedades recebidas
   if (isCorrect) {
+    // Estado correto: borda verde, fundo verde claro e ícone de checkmark
     cardStyles.push(styles.correctCard);
     textStyles.push(styles.correctText);
     iconName = 'checkmark-circle';
     iconColor = COLORS.success;
   } else if (isWrong) {
+    // Estado errado: borda vermelha, fundo vermelho claro e ícone de "X"
     cardStyles.push(styles.wrongCard);
     textStyles.push(styles.wrongText);
     iconName = 'close-circle';
     iconColor = COLORS.error;
   } else if (isSelected) {
+    // Estado selecionado (antes da validação): borda roxa/indigo e fundo roxo claro
     cardStyles.push(styles.selectedCard);
     textStyles.push(styles.selectedText);
   }
@@ -54,6 +60,7 @@ export const AnswerCard: React.FC<AnswerCardProps> = ({
     >
       <View style={styles.container}>
         <Text style={textStyles}>{text}</Text>
+        {/* Renderiza o ícone de feedback apenas após a resposta ser submetida (isCorrect ou isWrong) */}
         {iconName && (
           <Ionicons name={iconName} size={22} color={iconColor} style={styles.icon} />
         )}
@@ -120,3 +127,4 @@ const styles = StyleSheet.create({
     transform: [{ scale: 0.99 }],
   },
 });
+

@@ -3,17 +3,19 @@ import { StyleSheet, Text, Pressable, ViewStyle, TextStyle, View } from 'react-n
 import { COLORS, BORDER_RADIUS, SPACING } from '../constants/theme';
 import * as Haptics from 'expo-haptics';
 
+// Definição das propriedades do botão customizado (Button)
 interface ButtonProps {
-  title: string;
-  onPress: () => void;
-  variant?: 'primary' | 'secondary' | 'outline';
-  disabled?: boolean;
-  icon?: React.ReactNode;
-  style?: ViewStyle;
-  textStyle?: TextStyle;
-  hapticFeedback?: boolean;
+  title: string;                         // Texto exibido no botão
+  onPress: () => void;                   // Função callback disparada ao pressionar
+  variant?: 'primary' | 'secondary' | 'outline'; // Variantes visuais do botão
+  disabled?: boolean;                    // Define se o botão está desabilitado
+  icon?: React.ReactNode;                // Ícone opcional renderizado ao lado do texto
+  style?: ViewStyle;                     // Estilo customizado do container do botão
+  textStyle?: TextStyle;                 // Estilo customizado do texto do botão
+  hapticFeedback?: boolean;              // Controla se haverá feedback tátil ao tocar
 }
 
+// Botão personalizado premium reutilizável em todo o QuizMaster
 export const Button: React.FC<ButtonProps> = ({
   title,
   onPress,
@@ -24,14 +26,17 @@ export const Button: React.FC<ButtonProps> = ({
   textStyle,
   hapticFeedback = true,
 }) => {
+  // Trata o toque no botão, ignorando se estiver desabilitado
   const handlePress = () => {
     if (disabled) return;
+    // Se ativado, gera uma vibração tátil sutil para melhor UX
     if (hapticFeedback) {
       Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     }
     onPress();
   };
 
+  // Agrupa os estilos do container baseado na variante e estado atual
   const buttonStyles = [
     styles.button,
     variant === 'primary' && styles.primary,
@@ -41,6 +46,7 @@ export const Button: React.FC<ButtonProps> = ({
     style,
   ];
 
+  // Agrupa os estilos do texto baseado na variante e estado atual
   const textStyles = [
     styles.text,
     variant === 'primary' && styles.primaryText,
@@ -56,10 +62,12 @@ export const Button: React.FC<ButtonProps> = ({
       disabled={disabled}
       style={({ pressed }) => [
         ...buttonStyles,
+        // Efeito de encolhimento somente se for clicável
         pressed && !disabled && styles.pressed,
       ]}
     >
       <View style={styles.content}>
+        {/* Renderiza o ícone se ele tiver sido fornecido */}
         {icon && <View style={styles.iconContainer}>{icon}</View>}
         <Text style={textStyles}>{title}</Text>
       </View>
@@ -74,6 +82,7 @@ const styles = StyleSheet.create({
     borderRadius: BORDER_RADIUS.md,
     justifyContent: 'center',
     alignItems: 'center',
+    // Sombra sutil para o design premium do botão
     shadowColor: COLORS.primary,
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.1,
@@ -126,6 +135,7 @@ const styles = StyleSheet.create({
   },
   pressed: {
     opacity: 0.9,
-    transform: [{ scale: 0.98 }],
+    transform: [{ scale: 0.98 }], // Efeito de clique físico encolhendo levemente
   },
 });
+

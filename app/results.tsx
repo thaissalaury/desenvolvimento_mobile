@@ -10,47 +10,51 @@ import { useSound } from '../hooks/useSound';
 import { Ionicons } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
 
+// Tela de Resultados (Results) - Apresenta o feedback final da partida do jogador
 export default function Results() {
   const router = useRouter();
-  const { score, filteredQuestions, startQuiz } = useQuiz();
+  const { score, filteredQuestions, startQuiz } = useQuiz(); // Recupera pontuações e métodos
   const { playClick, playVictory } = useSound();
 
   const total = filteredQuestions.length || 10;
-  const percentage = Math.round((score / total) * 100);
+  const percentage = Math.round((score / total) * 100); // Calcula a porcentagem final de acertos
 
-  // Performance message and color scheme
+  // Definição de mensagens e cores dinâmicas baseadas no aproveitamento do jogador
   let performanceMessage = '';
   let iconName: keyof typeof Ionicons.glyphMap = 'trophy-outline';
   let iconColor = COLORS.primary;
 
   if (percentage >= 80) {
+    // Excelente: aproveitamento igual ou acima de 80% (Tema Dourado/Troféu)
     performanceMessage = 'Excelente!';
     iconName = 'trophy';
-    iconColor = '#EAB308'; // Gold
+    iconColor = '#EAB308'; // Ouro
   } else if (percentage >= 50) {
+    // Bom Trabalho: aproveitamento entre 50% e 79% (Tema Verde/Check)
     performanceMessage = 'Bom Trabalho!';
     iconName = 'checkmark-circle';
     iconColor = COLORS.success;
   } else {
+    // Continue Praticando: aproveitamento abaixo de 50% (Tema Roxo/Gráfico subindo)
     performanceMessage = 'Continue Praticando!';
     iconName = 'trending-up';
     iconColor = COLORS.secondary;
   }
 
-  // Animation values
-  const scaleAnim = useRef(new Animated.Value(0.3)).current;
-  const opacityAnim = useRef(new Animated.Value(0)).current;
+  // Valores de animação para a entrada triunfal do Card de pontuação
+  const scaleAnim = useRef(new Animated.Value(0.3)).current; // Inicia o Card encolhido (escala 0.3)
+  const opacityAnim = useRef(new Animated.Value(0)).current; // Inicia invisível (opacidade 0)
 
   useEffect(() => {
-    // Play victory sound if score is good (above 80%) or standard sound
+    // Toca som de vitória e aciona feedback tátil específico se o jogador teve ótimo desempenho (>= 80%)
     if (percentage >= 80) {
       playVictory();
       Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
     } else {
-      Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+      Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium); // Feedback tátil médio padrão
     }
 
-    // Scale up & fade in animations
+    // Executa em paralelo a expansão elástica (spring) e o surgimento gradual (timing) do card de resultados
     Animated.parallel([
       Animated.spring(scaleAnim, {
         toValue: 1,
@@ -66,12 +70,14 @@ export default function Results() {
     ]).start();
   }, [percentage]);
 
+  // Reinicia o quiz com a mesma categoria e dificuldade, redirecionando para a tela de jogo
   const handlePlayAgain = () => {
     playClick();
-    startQuiz();
+    startQuiz(); // Zera estados e sorteia novas perguntas
     router.replace('/quiz');
   };
 
+  // Retorna para a tela de início do aplicativo
   const handleGoHome = () => {
     playClick();
     router.replace('/');
@@ -81,7 +87,7 @@ export default function Results() {
     <ScreenContainer statusBarStyle="dark">
       <View style={styles.content}>
         
-        {/* Results Badge & Score Card */}
+        {/* Painel Centralizado e Animado de Resultados */}
         <Animated.View
           style={[
             styles.animatedContainer,
@@ -89,6 +95,7 @@ export default function Results() {
           ]}
         >
           <Card style={styles.resultsCard}>
+            {/* Círculo do Ícone Temático */}
             <View style={[styles.iconContainer, { backgroundColor: `${iconColor}15` }]}>
               <Ionicons name={iconName} size={64} color={iconColor} />
             </View>
@@ -101,6 +108,7 @@ export default function Results() {
               Você acertou {score} de {total} questões
             </Text>
 
+            {/* Quadro com o Percentual de Aproveitamento */}
             <View style={styles.percentContainer}>
               <Text style={styles.percentNumber}>{percentage}%</Text>
               <Text style={styles.percentLabel}>Aproveitamento</Text>
@@ -108,7 +116,7 @@ export default function Results() {
           </Card>
         </Animated.View>
 
-        {/* Action Buttons */}
+        {/* Seção de Botões de Ação para o Usuário */}
         <View style={styles.buttonSection}>
           <Button
             title="Jogar Novamente"
@@ -191,3 +199,4 @@ const styles = StyleSheet.create({
     width: '100%',
   },
 });
+
